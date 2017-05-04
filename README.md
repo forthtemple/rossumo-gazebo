@@ -5,4 +5,4 @@ Includes Gazebo simulation of a jumping Sumo.
 
 Also includes copy of https://github.com/arnaud-ramey/rossumo modified to have the same behaviour as Gazebo so can do simulations that are the same.
 
-[![Youtube sumo](http://forthtemple.com/sumo/youtuberossumo.jpg)](https://www.youtube.com/watch?v=5opPQ47Y-WE) 
+[![Youtube sumo](http://forthtemple.com/sumo/youtube500.jpg)](https://www.youtube.com/watch?v=5opPQ47Y-WE) 
