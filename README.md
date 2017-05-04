@@ -30,13 +30,15 @@ rosrun rossumo teleop_twist_keyboard.py
 and press the keys to move the sumo.
 
 # Installation rossumo
-To install the ROS wrapper for Ardrone SDK 3 follow instructions for install rossumo under 'rossumo' directory including building the ardrone SDK. It is similar to https://github.com/arnaud-ramey/rossumo but has been modified to behave like the Gazebo sumo.
+To install the ROS wrapper for Ardrone SDK 3 follow instructions for install rossumo under 'rossumo' directory including building the ardrone SDK. It is a copy of https://github.com/arnaud-ramey/rossumo but has been modified to behave like the Gazebo sumo.
 
 To record a real sumo
-``` rosbag record rossumo1/cmd_vel /rossumo1/high_jump
+``` 
+rosbag record rossumo1/cmd_vel /rossumo1/high_jump
 ```
 To play it to your Gazebo sumo:
-```rosbag play 2017-05-04-13-28-38.bag /rossumo1/cmd_vel:=/cmd_vel /rossumo1/high_jump:=/high_jump
+```
+rosbag play 2017-05-04-13-28-38.bag /rossumo1/cmd_vel:=/cmd_vel /rossumo1/high_jump:=/high_jump
 ```
 
 
