@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!-- doc: http://wiki.ros.org/catkin/package.xml -->
+<package format="2">
+  <name>rossumo</name>
+  <version>0.0.0</version>
+  <description>
+      Wrapper of the ARDroneSDK3 sample "JumpingSumoPiloting.c" as a C++ lightweight class for ROS.
+  </description>
+  <maintainer email="arnaud.a.ramey@gmail.com">Arnaud Ramey</maintainer>
+  <license>GPLv2</license>
+  <!-- dependencies -->
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>camera_calibration_parsers</depend>
+  <depend>cv_bridge</depend>
+  <depend>image_geometry</depend>
+  <depend>image_transport</depend>
+  <depend>roscpp</depend>
+  <depend>roslib</depend>
+  <depend>rosconsole</depend>
+  <depend>camera_info_manager</depend>
+  <depend>std_msgs</depend>
+  <export>
+        <rosdoc config="rosdoc.yaml" /> <!-- http://wiki.ros.org/rosdoc_lite -->
+      <cpp cflags="-I${prefix} -I${prefix}/build"
+         lflags="-L${prefix}/lib -Wl,-rpath,${prefix}/lib"/>
+  </export>
+</package>

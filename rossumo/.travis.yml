@@ -1,0 +1,42 @@
+# travis rules for rossumo
+language: cpp
+compiler:
+  - gcc
+
+before_install:
+  - export CI_SOURCE_PATH=$(pwd)
+  # install required packages from Ubuntu packages
+  - sudo apt-get install autoconf  libavahi-client-dev  libavcodec-dev  libavformat-dev  libswscale-dev
+  # try to install repo according to https://source.android.com/source/downloading.html#installing-repo
+  - mkdir ~/bin
+  - export PATH=~/bin:$PATH
+  - curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+  - chmod a+x ~/bin/repo
+  # configure git. First skip the prompt concerning the use of colors:
+  - git config --global color.ui true
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "foo@bar.com"
+  # download ARDroneSDK3 repositories
+  - cd ~
+  - repo init -u https://github.com/Parrot-Developers/arsdk_manifests.git
+  - repo sync --force-sync
+  # compile ARDroneSDK3
+  - ./build.sh -p arsdk-native -t build-sdk -j
+  # install ROS
+  - export ROS_DISTRO=hydro
+  - sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu precise main" > /etc/apt/sources.list.d/ros-latest.list'
+  - wget https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -O - | sudo apt-key add -
+  - sudo apt-get -qq update
+  - sudo apt-get install -y -qq ros-$ROS_DISTRO-ros-base  ros-$ROS_DISTRO-camera-calibration-parsers  ros-$ROS_DISTRO-cv-bridge  ros-$ROS_DISTRO-image-geometry  ros-$ROS_DISTRO-image-transport  ros-$ROS_DISTRO-std-msgs
+  - source /opt/ros/$ROS_DISTRO/setup.bash
+
+before_script: # Use this to prepare your build for testing e.g. copy database configurations, environment variables, etc.
+  # Create catkin workspace
+  - mkdir -p ~/catkin_ws/src
+  - cd ~/catkin_ws/src
+  - catkin_init_workspace
+  - ln -s $CI_SOURCE_PATH . # Link the repo we are testing to the new workspace
+
+script: # compile
+  - cd ~/catkin_ws
+  - catkin_make  -DARDRONESDK3_PATH=~/out/Unix-base/staging/usr

@@ -1,0 +1,8 @@
+just change the gym-gazebo to gym-gazeboii so doesn't find it
+
+IGNORE THIS
+to build camera calibration get rid of gym-gazebo reference in build.make and link.txt in rossumo.exedir and replace with
+
+/opt/ros/kinetic/lib/libcamera_calibration_parsers.so
+
+
