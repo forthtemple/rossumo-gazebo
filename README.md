@@ -1,4 +1,4 @@
-# rossumo-gazebo
+# ROS Sumo Gazebo
 Gazebo simulation of Parrot Jumping Sumo with ROS wrapper for Ardrone SDK 3 
 
 Includes Gazebo simulation of a jumping Sumo. 
@@ -8,18 +8,19 @@ Also includes copy of https://github.com/arnaud-ramey/rossumo modified to have t
 [![Youtube sumo](http://forthtemple.com/sumo/youtube500.jpg)](https://www.youtube.com/watch?v=5opPQ47Y-WE) 
 
 
-*Installation Gazebo Only*
-If you just want run the model under gazebo then
-clone source under catkin_ws/src 
-catkin_make --only-pkg-with-deps rossumo_gazebo
+# Installation Gazebo Only
+If you just want run the model under gazebo then under your catkin_src directory:
+cd ~/catkin_ws/src
+git clone 
+2) catkin_make --only-pkg-with-deps rossumo_gazebo
 catkin_make --only-pkg-with-deps rossumo_description
 
-*Run with Gazebo Only*
+# Run with Gazebo Only
 roslaunch rossumo_gazebo rossumo_world.launch
 
 rosrun rossumo teleop_twist_keyboard.py
 
 
-*Installation Full*
+# Installation Full
 Follow instructions for install rossumo under 'rossumo' directory
 
