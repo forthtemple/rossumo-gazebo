@@ -1,5 +1,5 @@
 # ROS Sumo Gazebo
-Gazebo simulation of Parrot Jumping Sumo with ROS wrapper for Ardrone SDK 3 
+This is a gazebo simulation of Parrot Jumping Sumo including ROS wrapper for Ardrone SDK 3. It allows you to simulate a Jumping Sumo Drone and also run a real Sumo Drone through ROS. You can record movements on the real Sumo drone with ROSBAG and play them in the simultion. The purpose of creating the simulation is to use reinforcement learning to teach a sumo to do things like climb stairs in Gazebo and apply what is learnt to a real jumping sumo.
 
 Includes Gazebo simulation of a jumping Sumo. 
 
@@ -22,12 +22,14 @@ catkin_make --only-pkg-with-deps rossumo_description
 
 # Run with Gazebo Only
 In one terminal run:
+```
 roslaunch rossumo_gazebo rossumo_world.launch
-
+```
 In another terminal run:
+```
 rosrun rossumo teleop_twist_keyboard.py
+```
 
-
-# Installation Full
-Follow instructions for install rossumo under 'rossumo' directory
+# Installation rossumo
+To install the ROS wrapper for Ardrone SDK 3 follow instructions for install rossumo under 'rossumo' directory including building the ardrone SDK
 
