@@ -12,13 +12,13 @@ Also includes copy of https://github.com/arnaud-ramey/rossumo modified to have t
 Install ROS (eg http://wiki.ros.org/indigo/Installation/Ubuntu if from ubuntu)
 
 If you just want run the model under gazebo then under your catkin_src directory:
-'''
+```
 cd ~/catkin_ws/src
 git clone https://github.com/forthtemple/rossumo-gazebo.git
 cd ~/catkin_ws
 catkin_make --only-pkg-with-deps rossumo_gazebo
 catkin_make --only-pkg-with-deps rossumo_description
-'''
+```
 
 # Run with Gazebo Only
 In one terminal run:
