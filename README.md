@@ -25,9 +25,14 @@ roslaunch rossumo_gazebo rossumo_world.launch
 ```
 In another terminal run:
 ```
-rosrun rossumo teleop_twist_keyboard.py
+rosrun rossumo_gazebo teleop_twist_keyboard.py
 ```
 and press the keys to move the sumo.
+
+If you want to jump in the simulation then run:
+```
+rosrun rossumo_gazebo  rossumo.py
+```
 
 # Installation rossumo
 To install the ROS wrapper for Ardrone SDK 3 follow instructions for install rossumo under 'rossumo' directory including building the ardrone SDK. It is a copy of https://github.com/arnaud-ramey/rossumo but has been modified to behave like the Gazebo sumo.
