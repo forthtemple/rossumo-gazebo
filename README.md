@@ -9,7 +9,7 @@ This video shows is an example of a movements of a real Sumo recorded with ROSBA
 # Installation Gazebo Only
 Install ROS (eg http://wiki.ros.org/indigo/Installation/Ubuntu if from ubuntu)
 
-If you just want run the model under gazebo then under your catkin_src directory:
+If you just want use the sumo model under gazebo then under your catkin_ws directory:
 ```
 cd ~/catkin_ws/src
 git clone https://github.com/forthtemple/rossumo-gazebo.git
